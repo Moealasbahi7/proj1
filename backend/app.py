@@ -4,6 +4,7 @@ from models.genre import Genre
 from models.film import Film
 from models.avis import Avis
 from flask_cors import CORS
+import os
 
 app = Flask(__name__)
 
@@ -19,8 +20,9 @@ cors = CORS(app, resources={
 
 app.json.ensure_ascii = False
 
-# Configuration SQLite (no PostgreSQL needed!)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///cinetheque.db"
+# Configuration 
+
+app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL", "sqlite:///cinetheque.db")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Initialisation SQLAlchemy
@@ -389,7 +391,7 @@ def setup():
 
 if __name__ == "__main__":
     app.run(
-        host="127.0.0.1",
+        host="0.0.0.0",
         port=5001,
         debug=True
     )
