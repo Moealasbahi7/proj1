@@ -1,0 +1,412 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  color: #333;
+  font-size: 2.5em;
+}
+
+.message {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.message-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Buttons */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background: #667eea;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+.btn-warning {
+  background: #ffc107;
+  color: #333;
+}
+
+.btn-warning:hover {
+  background: #e0a800;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c82333;
+}
+
+.btn-danger-small {
+  padding: 6px 12px;
+  background: #dc3545;
+  color: white;
+  font-size: 12px;
+}
+
+.btn-danger-small:hover {
+  background: #c82333;
+}
+
+.btn-info {
+  background: #17a2b8;
+  color: white;
+}
+
+.btn-info:hover {
+  background: #138496;
+}
+
+.btn-back {
+  background: #6c757d;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.btn-back:hover {
+  background: #5a6268;
+}
+
+/* Forms */
+.form-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* List Page */
+.list-page {
+  display: grid;
+  gap: 30px;
+}
+
+.films-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.films-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.film-card {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.film-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.film-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+}
+
+.film-card p {
+  color: #555;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.film-card .synopsis {
+  color: #666;
+  font-size: 0.95em;
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rating {
+  color: #d4af37;
+  font-weight: bold;
+  margin: 10px 0 !important;
+}
+
+.film-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.film-actions .btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 8px 12px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.no-films {
+  color: #666;
+  text-align: center;
+  padding: 40px;
+  font-size: 1.1em;
+}
+
+/* Detail Page */
+.detail-page {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.film-detail {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.film-detail h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.film-detail p {
+  margin: 10px 0;
+  font-size: 1.1em;
+}
+
+.rating-large {
+  font-size: 1.3em;
+  color: #d4af37;
+  margin: 15px 0 !important;
+}
+
+.synopsis-detail {
+  margin-top: 20px;
+  line-height: 1.8;
+  font-size: 1em;
+}
+
+.avis-form-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #e9ecef;
+}
+
+.avis-form-section h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.avis-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.avis-section h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.avis-list {
+  display: grid;
+  gap: 15px;
+}
+
+.avis-card {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.avis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.avis-header strong {
+  color: #333;
+  font-size: 1.05em;
+}
+
+.avis-note {
+  color: #d4af37;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.avis-date {
+  color: #999;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.avis-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.avis-card .btn {
+  margin-top: 10px;
+  margin-right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .films-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .film-actions {
+    flex-direction: column;
+  }
+
+  .film-actions .btn {
+    width: 100%;
+  }
+
+  .film-detail {
+    padding: 20px;
+  }
+
+  .film-detail h2 {
+    font-size: 1.5em;
+  }
+}
